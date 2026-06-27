@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Download, CalendarCheck, ArrowRight } from "lucide-react";
 import { Section } from "@/components/site/section";
@@ -39,9 +40,9 @@ export function Partners() {
             >
               <h3 className="font-display text-xl font-bold">{t.name}</h3>
               <p className="mt-1 text-sm text-muted">{t.note}</p>
-              <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[var(--neon-cyan)]">
+              <Link href="/contact" className="mt-6 flex items-center gap-2 text-sm font-semibold text-[var(--neon-cyan)] hover:gap-3">
                 Explore tier <ArrowRight className="h-4 w-4" />
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -56,9 +57,9 @@ export function Partners() {
             ))}
           </div>
           <div className="mt-6 space-y-2">
-            <a href="#" className="flex h-11 items-center justify-center gap-2 rounded-xl bg-[linear-gradient(110deg,var(--neon-blue),var(--neon-violet))] text-sm font-semibold text-white">
+            <Link href="/downloads" className="flex h-11 items-center justify-center gap-2 rounded-xl bg-[linear-gradient(110deg,var(--neon-blue),var(--neon-violet))] text-sm font-semibold text-white">
               <Download className="h-4 w-4" /> Sponsorship deck
-            </a>
+            </Link>
             <a href={`mailto:${SITE.contact.partnerships}`} className="glass flex h-11 items-center justify-center gap-2 rounded-xl text-sm font-semibold hover:bg-white/10">
               <CalendarCheck className="h-4 w-4" /> Book a meeting
             </a>

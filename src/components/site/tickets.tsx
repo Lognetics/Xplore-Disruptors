@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Check, ArrowRight, Star } from "lucide-react";
 import { Section } from "@/components/site/section";
@@ -45,8 +46,8 @@ export function Tickets() {
                 </li>
               ))}
             </ul>
-            <a
-              href="#"
+            <Link
+              href="/contact"
               className={cn(
                 "mt-6 inline-flex h-11 items-center justify-center gap-1.5 rounded-xl text-sm font-semibold transition-transform hover:scale-[1.02]",
                 t.featured
@@ -55,7 +56,7 @@ export function Tickets() {
               )}
             >
               Get {t.name} <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </motion.div>
         ))}
       </div>

@@ -24,24 +24,35 @@ export const DOMAINS: Domain[] = [
 ];
 
 /** Section 6 — The Xplore Ecosystem (sub-brands). */
-export type EcoBrand = { name: string; icon: LucideIcon; desc: string };
+export type EcoBrand = {
+  slug: string;
+  name: string;
+  icon: LucideIcon;
+  desc: string;
+  long: string;
+  offerings: string[];
+};
 export const ECOSYSTEM: EcoBrand[] = [
-  { name: "XPLORE Summit", icon: Globe2, desc: "The flagship festival." },
-  { name: "XPLORE Awards", icon: Trophy, desc: "Honouring the disruptors." },
-  { name: "XPLORE Labs", icon: FlaskConical, desc: "Deep-tech R&D." },
-  { name: "XPLORE Ventures", icon: TrendingUp, desc: "Building & backing startups." },
-  { name: "XPLORE Capital", icon: Coins, desc: "Funding the frontier." },
-  { name: "XPLORE Startup School", icon: School, desc: "Founders, trained." },
-  { name: "XPLORE Academy", icon: GraduationCap, desc: "Future-skills for all." },
-  { name: "XPLORE Foundation", icon: Building2, desc: "Innovation for impact." },
-  { name: "XPLORE Podcast", icon: Podcast, desc: "Voices of the builders." },
-  { name: "XPLORE Magazine", icon: BookOpen, desc: "Stories of innovation." },
-  { name: "XPLORE TV", icon: Tv, desc: "The festival, streamed." },
-  { name: "XPLORE Jobs", icon: Briefcase, desc: "Talent meets opportunity." },
-  { name: "XPLORE Research", icon: LineChart, desc: "Data on the ecosystem." },
-  { name: "XPLORE Innovation Index", icon: TrendingUp, desc: "Ranking what's rising." },
-  { name: "XPLORE AI", icon: Cpu, desc: "Intelligence, embedded." },
+  { slug: "summit", name: "XPLORE Summit", icon: Globe2, desc: "The flagship festival.", long: "The continent's largest gathering of founders, investors, governments and innovators — the beating heart of the Xplore ecosystem.", offerings: ["Main-stage keynotes", "Startup pitch arena", "Investor lounge", "Tech expo & exhibitions"] },
+  { slug: "awards", name: "XPLORE Awards", icon: Trophy, desc: "Honouring the disruptors.", long: "A continental recognition programme celebrating the founders, builders and institutions redefining Africa's future.", offerings: ["Founder of the Year", "Breakthrough Startup", "Investor of the Year", "Public-sector Innovation"] },
+  { slug: "labs", name: "XPLORE Labs", icon: FlaskConical, desc: "Deep-tech R&D.", long: "An applied research arm working at the frontier — AI, robotics, climate and quantum — turning research into deployable products.", offerings: ["Applied AI research", "Hardware prototyping", "University partnerships", "Open datasets"] },
+  { slug: "ventures", name: "XPLORE Ventures", icon: TrendingUp, desc: "Building & backing startups.", long: "A venture studio and accelerator that builds, funds and scales the most promising teams across the continent.", offerings: ["Pre-seed studio", "12-week accelerator", "Hands-on operating support", "Follow-on access"] },
+  { slug: "capital", name: "XPLORE Capital", icon: Coins, desc: "Funding the frontier.", long: "The investment platform connecting African startups to a global network of angels, VCs and institutional capital.", offerings: ["Syndicated deals", "Investor matchmaking", "Due-diligence room", "Cap-table tooling"] },
+  { slug: "startup-school", name: "XPLORE Startup School", icon: School, desc: "Founders, trained.", long: "An intensive founder programme teaching the craft of building, from idea to product-market fit to fundraising.", offerings: ["Founder bootcamps", "Mentor network", "Fundraising clinics", "Demo days"] },
+  { slug: "academy", name: "XPLORE Academy", icon: GraduationCap, desc: "Future-skills for all.", long: "Future-skills training in AI, data, cloud and product — accessible to every campus and phone on the continent.", offerings: ["AI & data tracks", "Industry certifications", "Scholarships", "Hiring partners"] },
+  { slug: "foundation", name: "XPLORE Foundation", icon: Building2, desc: "Innovation for impact.", long: "The non-profit arm channelling innovation toward the continent's biggest social challenges.", offerings: ["Grants & scholarships", "Community labs", "Digital-inclusion drives", "Impact research"] },
+  { slug: "podcast", name: "XPLORE Podcast", icon: Podcast, desc: "Voices of the builders.", long: "Long-form conversations with the founders, investors and operators building Africa's future.", offerings: ["Weekly episodes", "Founder deep-dives", "Investor AMAs", "Live recordings"] },
+  { slug: "magazine", name: "XPLORE Magazine", icon: BookOpen, desc: "Stories of innovation.", long: "A digital and print publication chronicling the rise of African technology and the people behind it.", offerings: ["Cover stories", "Founder profiles", "Sector deep-dives", "Annual review"] },
+  { slug: "tv", name: "XPLORE TV", icon: Tv, desc: "The festival, streamed.", long: "Broadcast and on-demand coverage bringing the festival's stages to millions across the continent and beyond.", offerings: ["Live stage streams", "On-demand talks", "Original series", "Highlight reels"] },
+  { slug: "jobs", name: "XPLORE Jobs", icon: Briefcase, desc: "Talent meets opportunity.", long: "The careers marketplace connecting Africa's best technology talent with the companies building the future.", offerings: ["Curated roles", "Talent profiles", "Hiring events", "Verified employers"] },
+  { slug: "research", name: "XPLORE Research", icon: LineChart, desc: "Data on the ecosystem.", long: "The data and insights engine producing authoritative reports on Africa's innovation economy.", offerings: ["Sector reports", "Funding data", "Ecosystem maps", "Custom research"] },
+  { slug: "innovation-index", name: "XPLORE Innovation Index", icon: TrendingUp, desc: "Ranking what's rising.", long: "A definitive index ranking the cities, startups and sectors driving African innovation forward.", offerings: ["City rankings", "Startup leaderboards", "Sector momentum", "Annual index"] },
+  { slug: "ai", name: "XPLORE AI", icon: Cpu, desc: "Intelligence, embedded.", long: "The intelligence layer powering the platform — matchmaking, recommendations, translation and assistance.", offerings: ["AI matchmaking", "Personal agendas", "Live translation", "AI assistant"] },
 ];
+
+export function ecoBySlug(slug: string) {
+  return ECOSYSTEM.find((e) => e.slug === slug);
+}
 
 /** Section 7 — Experience zones. */
 export const EXPERIENCES = [

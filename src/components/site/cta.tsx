@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { SITE } from "@/lib/site";
@@ -17,13 +18,13 @@ export function CTA() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-muted">{SITE.connector}.</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="#tickets" className="group inline-flex h-12 items-center gap-2 rounded-2xl bg-[linear-gradient(110deg,var(--neon-blue),var(--neon-violet))] px-7 font-semibold text-white shadow-[0_14px_44px_-10px_var(--neon-blue)] transition-transform hover:scale-[1.03]">
+            <Link href="/tickets" className="group inline-flex h-12 items-center gap-2 rounded-2xl bg-[linear-gradient(110deg,var(--neon-blue),var(--neon-violet))] px-7 font-semibold text-white shadow-[0_14px_44px_-10px_var(--neon-blue)] transition-transform hover:scale-[1.03]">
               <Sparkles className="h-4 w-4" /> Get your free ticket
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
-            <a href="#partners" className="glass inline-flex h-12 items-center gap-2 rounded-2xl px-7 font-semibold hover:bg-white/10">
+            </Link>
+            <Link href="/partners" className="glass inline-flex h-12 items-center gap-2 rounded-2xl px-7 font-semibold hover:bg-white/10">
               Partner with us
-            </a>
+            </Link>
           </div>
         </div>
       </Reveal>

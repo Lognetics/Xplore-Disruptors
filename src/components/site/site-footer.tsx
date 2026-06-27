@@ -1,13 +1,8 @@
+import Link from "next/link";
 import { Mail, Phone, ArrowRight } from "lucide-react";
 import { Logo } from "@/components/brand/logo";
 import { SITE } from "@/lib/site";
-
-const COLUMNS = [
-  { title: "Festival", links: ["About", "Mission & Vision", "Speakers", "Agenda", "Exhibitors", "Awards"] },
-  { title: "Ecosystem", links: ["XPLORE Labs", "XPLORE Ventures", "XPLORE Academy", "Startup School", "Research", "Innovation Index"] },
-  { title: "Participate", links: ["Get Tickets", "Become a Partner", "Pitch Competition", "Hackathon", "Volunteer", "Campus Ambassadors"] },
-  { title: "Resources", links: ["Download Brochure", "Sponsorship Deck", "Press Kit", "Brand Assets", "Blog", "Newsroom"] },
-];
+import { FOOTER, LEGAL_LINKS } from "@/lib/nav";
 
 export function SiteFooter() {
   return (
@@ -53,13 +48,13 @@ export function SiteFooter() {
               <a href={SITE.socials.instagram} className="glass inline-flex h-9 items-center rounded-lg px-3 text-xs font-semibold hover:bg-white/10">Instagram</a>
             </div>
           </div>
-          {COLUMNS.map((col) => (
-            <div key={col.title}>
-              <h4 className="text-sm font-semibold text-foreground">{col.title}</h4>
+          {FOOTER.map((col) => (
+            <div key={col.label}>
+              <h4 className="text-sm font-semibold text-foreground">{col.label}</h4>
               <ul className="mt-3 space-y-2">
-                {col.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="text-sm text-muted transition-colors hover:text-foreground">{l}</a>
+                {col.items.map((l) => (
+                  <li key={l.href + l.label}>
+                    <Link href={l.href} className="text-sm text-muted transition-colors hover:text-foreground">{l.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -70,9 +65,9 @@ export function SiteFooter() {
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted sm:flex-row">
           <p>© 2025 XPLORE Disruptors by Lognetics. All rights reserved.</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-foreground">Privacy</a>
-            <a href="#" className="hover:text-foreground">Terms</a>
-            <a href="#" className="hover:text-foreground">Cookies</a>
+            {LEGAL_LINKS.map((l) => (
+              <Link key={l.href} href={l.href} className="hover:text-foreground">{l.label}</Link>
+            ))}
           </div>
         </div>
       </div>

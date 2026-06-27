@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight, Play, Sparkles, MapPin, CalendarDays, ChevronDown } from "lucide-react";
 import { Globe } from "@/components/three/globe";
@@ -64,20 +65,20 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.32, ease }}
           className="mt-8 flex flex-col items-center gap-3 sm:flex-row"
         >
-          <a
-            href="#tickets"
+          <Link
+            href="/tickets"
             className="group inline-flex h-12 items-center gap-2 rounded-2xl bg-[linear-gradient(110deg,var(--neon-blue),var(--neon-violet))] px-6 font-semibold text-white shadow-[0_12px_40px_-10px_var(--neon-blue)] transition-transform hover:scale-[1.03]"
           >
             <Sparkles className="h-4 w-4" /> Get Free Ticket
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
-          <a href="#partners" className="glass inline-flex h-12 items-center gap-2 rounded-2xl px-6 font-semibold text-foreground transition-colors hover:bg-white/10">
+          </Link>
+          <Link href="/partners" className="glass inline-flex h-12 items-center gap-2 rounded-2xl px-6 font-semibold text-foreground transition-colors hover:bg-white/10">
             Become a Partner
-          </a>
-          <a href="#gallery" className="inline-flex h-12 items-center gap-2 rounded-2xl px-4 font-semibold text-muted transition-colors hover:text-foreground">
+          </Link>
+          <Link href="/gallery" className="inline-flex h-12 items-center gap-2 rounded-2xl px-4 font-semibold text-muted transition-colors hover:text-foreground">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-full glass"><Play className="h-4 w-4 fill-current" /></span>
             Watch Trailer
-          </a>
+          </Link>
         </motion.div>
 
         <motion.div

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Mic, ArrowRight } from "lucide-react";
 import { Section } from "@/components/site/section";
@@ -56,9 +57,9 @@ export function Speakers() {
       </div>
 
       <div className="mt-8 flex justify-center">
-        <a href="#" className="glass inline-flex h-11 items-center gap-2 rounded-2xl px-5 text-sm font-semibold hover:bg-white/10">
+        <Link href="/contact" className="glass inline-flex h-11 items-center gap-2 rounded-2xl px-5 text-sm font-semibold hover:bg-white/10">
           <Mic className="h-4 w-4" /> Apply to speak <ArrowRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
     </Section>
   );
