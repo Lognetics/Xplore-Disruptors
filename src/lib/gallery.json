@@ -1,0 +1,182 @@
+[
+  {
+    "id": "xpl-01",
+    "src": "/media/gallery/xpl-01.webp",
+    "thumb": "/media/gallery/xpl-01-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-02",
+    "src": "/media/gallery/xpl-02.webp",
+    "thumb": "/media/gallery/xpl-02-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-03",
+    "src": "/media/gallery/xpl-03.webp",
+    "thumb": "/media/gallery/xpl-03-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-04",
+    "src": "/media/gallery/xpl-04.webp",
+    "thumb": "/media/gallery/xpl-04-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-05",
+    "src": "/media/gallery/xpl-05.webp",
+    "thumb": "/media/gallery/xpl-05-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-06",
+    "src": "/media/gallery/xpl-06.webp",
+    "thumb": "/media/gallery/xpl-06-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-07",
+    "src": "/media/gallery/xpl-07.webp",
+    "thumb": "/media/gallery/xpl-07-thumb.webp",
+    "orientation": "portrait"
+  },
+  {
+    "id": "xpl-08",
+    "src": "/media/gallery/xpl-08.webp",
+    "thumb": "/media/gallery/xpl-08-thumb.webp",
+    "orientation": "portrait"
+  },
+  {
+    "id": "xpl-09",
+    "src": "/media/gallery/xpl-09.webp",
+    "thumb": "/media/gallery/xpl-09-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-10",
+    "src": "/media/gallery/xpl-10.webp",
+    "thumb": "/media/gallery/xpl-10-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-11",
+    "src": "/media/gallery/xpl-11.webp",
+    "thumb": "/media/gallery/xpl-11-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-12",
+    "src": "/media/gallery/xpl-12.webp",
+    "thumb": "/media/gallery/xpl-12-thumb.webp",
+    "orientation": "portrait"
+  },
+  {
+    "id": "xpl-13",
+    "src": "/media/gallery/xpl-13.webp",
+    "thumb": "/media/gallery/xpl-13-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-14",
+    "src": "/media/gallery/xpl-14.webp",
+    "thumb": "/media/gallery/xpl-14-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-15",
+    "src": "/media/gallery/xpl-15.webp",
+    "thumb": "/media/gallery/xpl-15-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-16",
+    "src": "/media/gallery/xpl-16.webp",
+    "thumb": "/media/gallery/xpl-16-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-17",
+    "src": "/media/gallery/xpl-17.webp",
+    "thumb": "/media/gallery/xpl-17-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-18",
+    "src": "/media/gallery/xpl-18.webp",
+    "thumb": "/media/gallery/xpl-18-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-19",
+    "src": "/media/gallery/xpl-19.webp",
+    "thumb": "/media/gallery/xpl-19-thumb.webp",
+    "orientation": "portrait"
+  },
+  {
+    "id": "xpl-20",
+    "src": "/media/gallery/xpl-20.webp",
+    "thumb": "/media/gallery/xpl-20-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-21",
+    "src": "/media/gallery/xpl-21.webp",
+    "thumb": "/media/gallery/xpl-21-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-22",
+    "src": "/media/gallery/xpl-22.webp",
+    "thumb": "/media/gallery/xpl-22-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-23",
+    "src": "/media/gallery/xpl-23.webp",
+    "thumb": "/media/gallery/xpl-23-thumb.webp",
+    "orientation": "portrait"
+  },
+  {
+    "id": "xpl-24",
+    "src": "/media/gallery/xpl-24.webp",
+    "thumb": "/media/gallery/xpl-24-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-25",
+    "src": "/media/gallery/xpl-25.webp",
+    "thumb": "/media/gallery/xpl-25-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-26",
+    "src": "/media/gallery/xpl-26.webp",
+    "thumb": "/media/gallery/xpl-26-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-27",
+    "src": "/media/gallery/xpl-27.webp",
+    "thumb": "/media/gallery/xpl-27-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-28",
+    "src": "/media/gallery/xpl-28.webp",
+    "thumb": "/media/gallery/xpl-28-thumb.webp",
+    "orientation": "landscape"
+  },
+  {
+    "id": "xpl-29",
+    "src": "/media/gallery/xpl-29.webp",
+    "thumb": "/media/gallery/xpl-29-thumb.webp",
+    "orientation": "portrait"
+  },
+  {
+    "id": "xpl-30",
+    "src": "/media/gallery/xpl-30.webp",
+    "thumb": "/media/gallery/xpl-30-thumb.webp",
+    "orientation": "landscape"
+  }
+]
