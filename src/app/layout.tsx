@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import { AppShell } from "@/components/shell/app-shell";
 import { SITE } from "@/lib/site";
 
 const inter = Inter({
@@ -19,18 +18,15 @@ const display = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(`https://${SITE.domain}`),
   applicationName: SITE.name,
   title: {
-    default: `${SITE.name} — Africa's Innovation Operating System`,
+    default: `${SITE.name} — Africa Is Building The Future`,
     template: `%s · ${SITE.name}`,
   },
   description: SITE.description,
   manifest: "/manifest.webmanifest",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "black-translucent",
-    title: SITE.shortName,
-  },
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: SITE.shortName },
   formatDetection: { telephone: false },
   openGraph: {
     title: `${SITE.name} — ${SITE.tagline}`,
@@ -41,10 +37,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#05070e" },
-    { media: "(prefers-color-scheme: light)", color: "#f6f8fc" },
-  ],
+  themeColor: "#03040a",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -53,11 +46,9 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${display.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`dark ${inter.variable} ${display.variable}`}>
       <body className="min-h-dvh antialiased">
-        <ThemeProvider>
-          <AppShell>{children}</AppShell>
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

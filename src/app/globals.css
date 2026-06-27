@@ -49,17 +49,22 @@
 }
 
 .dark {
-  --background: #05070e;
-  --background-elevated: #0b1020;
-  --foreground: #eaf0ff;
-  --muted: #8a93a8;
+  --background: #03040a;
+  --background-elevated: #080b16;
+  --foreground: #eef2ff;
+  --muted: #8b93ad;
   --border: rgba(255, 255, 255, 0.08);
-  --card: rgba(255, 255, 255, 0.045);
-  --card-border: rgba(255, 255, 255, 0.1);
-  --glass: rgba(17, 24, 44, 0.5);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --shadow-color: 230 60% 2%;
+  --card: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(255, 255, 255, 0.09);
+  --glass: rgba(10, 14, 28, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow-color: 240 70% 1%;
   --ring: var(--brand-400);
+  /* Neon accents for the cinematic site */
+  --neon-blue: #2e7bff;
+  --neon-cyan: #22d3ee;
+  --neon-violet: #8b5cf6;
+  --neon-magenta: #c026d3;
 }
 
 /* Map tokens into Tailwind's theme so utilities like bg-brand-500 / text-muted work */

@@ -8,10 +8,12 @@ import { compact } from "@/lib/utils";
 export function StatCounter({
   value,
   suffix = "",
+  prefix = "",
   className,
 }: {
   value: number;
   suffix?: string;
+  prefix?: string;
   className?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -28,6 +30,7 @@ export function StatCounter({
 
   return (
     <span ref={ref} className={className}>
+      {prefix}
       <motion.span>{text}</motion.span>
       {suffix}
     </span>
