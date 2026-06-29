@@ -137,6 +137,13 @@
     -webkit-tap-highlight-color: transparent;
     scroll-behavior: smooth;
   }
+  /* Scale typography down ~20% on mobile for a calmer, less text-heavy read.
+     rem-based sizing means headings + body shrink proportionally. */
+  @media (max-width: 767px) {
+    html {
+      font-size: 80%;
+    }
+  }
   body {
     background: var(--background);
     color: var(--foreground);

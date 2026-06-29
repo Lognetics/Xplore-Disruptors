@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/site/page-hero";
 import { Prose } from "@/components/site/prose";
+import { ImageShowcase } from "@/components/site/media";
 import { SITE } from "@/lib/site";
 
 export const metadata = { title: "Cookie Policy" };
@@ -17,6 +18,7 @@ export default function CookiesPage() {
     <>
       <PageHero eyebrow="Legal" breadcrumb="Cookies" title="Cookie Policy" subtitle="How and why we use cookies." />
       <Prose sections={SECTIONS} updated="June 2026" />
+      <ImageShowcase offset={23} count={3} className="py-16" />
     </>
   );
 }

@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
+import { imageSet } from "@/lib/images";
 import { SITE } from "@/lib/site";
 
 export function CTA() {
@@ -8,7 +10,8 @@ export function CTA() {
     <section className="mx-auto w-full max-w-7xl px-5 py-16 sm:px-6">
       <Reveal>
         <div className="relative overflow-hidden rounded-[2.5rem] border border-border p-10 text-center sm:p-16">
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(130deg,rgba(46,123,255,0.22),rgba(139,92,246,0.18)_45%,rgba(192,38,211,0.16))]" />
+          <Image src={imageSet(26, 1)[0].src} alt="" fill sizes="100vw" className="-z-20 object-cover opacity-25" />
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(130deg,rgba(46,123,255,0.82),rgba(139,92,246,0.78)_45%,rgba(192,38,211,0.72))]" />
           <div className="absolute -left-20 -top-20 -z-10 h-72 w-72 rounded-full bg-[var(--neon-blue)] opacity-25 blur-[100px]" />
           <div className="absolute -bottom-24 -right-16 -z-10 h-72 w-72 rounded-full bg-[var(--neon-violet)] opacity-25 blur-[100px]" />
 

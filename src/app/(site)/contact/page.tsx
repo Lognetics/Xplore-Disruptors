@@ -2,6 +2,7 @@ import { Phone, Mail, MapPin, Handshake, Mic, Newspaper } from "lucide-react";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
 import { ContactForm } from "@/components/site/contact-form";
+import { ImageShowcase } from "@/components/site/media";
 import { Reveal } from "@/components/ui/reveal";
 import { SITE } from "@/lib/site";
 
@@ -79,6 +80,7 @@ export default function ContactPage() {
           ))}
         </div>
       </Section>
+      <ImageShowcase eyebrow="Where the future gets built" offset={6} count={3} className="pb-16" />
     </>
   );
 }

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
+import { ImageBanner } from "@/components/site/media";
+import { hashSeed } from "@/lib/images";
 import { cn } from "@/lib/utils";
 
 type Action = { label: string; href: string; variant?: "primary" | "glass" };
@@ -13,6 +15,7 @@ export function PageHero({
   breadcrumb,
   actions,
   align = "left",
+  image = true,
 }: {
   eyebrow?: string;
   title: React.ReactNode;
@@ -20,6 +23,7 @@ export function PageHero({
   breadcrumb?: string;
   actions?: Action[];
   align?: "left" | "center";
+  image?: boolean;
 }) {
   return (
     <section className="relative overflow-hidden px-5 pt-32 pb-12 sm:px-6 sm:pt-40 sm:pb-16">
@@ -62,6 +66,7 @@ export function PageHero({
           )}
         </Reveal>
       </div>
+      {image && <ImageBanner offset={hashSeed((breadcrumb ?? eyebrow ?? "xplore") + "hero")} />}
     </section>
   );
 }

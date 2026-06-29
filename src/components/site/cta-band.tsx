@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
+import { ImageShowcase } from "@/components/site/media";
+import { hashSeed } from "@/lib/images";
 
 /** Reusable gradient CTA band for the bottom of inner pages. */
 export function CTABand({
@@ -14,8 +16,10 @@ export function CTABand({
   primary?: { label: string; href: string };
   secondary?: { label: string; href: string };
 }) {
+  const seed = hashSeed((typeof title === "string" ? title : primary.href) + "cta");
   return (
     <section className="mx-auto w-full max-w-7xl px-5 py-16 sm:px-6">
+      <ImageShowcase offset={seed} count={3} className="mb-12 !px-0" />
       <Reveal>
         <div className="relative overflow-hidden rounded-[2.5rem] border border-border p-10 text-center sm:p-14">
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(130deg,rgba(46,123,255,0.2),rgba(139,92,246,0.16)_50%,rgba(192,38,211,0.14))]" />

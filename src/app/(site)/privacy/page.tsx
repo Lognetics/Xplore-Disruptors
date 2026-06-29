@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/site/page-hero";
 import { Prose } from "@/components/site/prose";
+import { ImageShowcase } from "@/components/site/media";
 import { SITE } from "@/lib/site";
 
 export const metadata = { title: "Privacy Policy" };
@@ -19,6 +20,7 @@ export default function PrivacyPage() {
     <>
       <PageHero eyebrow="Legal" breadcrumb="Privacy" title="Privacy Policy" subtitle="How we collect, use and protect your information." />
       <Prose sections={SECTIONS} updated="June 2026" />
+      <ImageShowcase offset={3} count={3} className="py-16" />
     </>
   );
 }

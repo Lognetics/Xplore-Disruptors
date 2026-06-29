@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/site/page-hero";
 import { Prose } from "@/components/site/prose";
+import { ImageShowcase } from "@/components/site/media";
 import { SITE } from "@/lib/site";
 
 export const metadata = { title: "Terms of Service" };
@@ -19,6 +20,7 @@ export default function TermsPage() {
     <>
       <PageHero eyebrow="Legal" breadcrumb="Terms" title="Terms of Service" subtitle="The terms governing your use of Xplore Disruptors." />
       <Prose sections={SECTIONS} updated="June 2026" />
+      <ImageShowcase offset={13} count={3} className="py-16" />
     </>
   );
 }
