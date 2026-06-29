@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
-import { imageSet } from "@/lib/images";
+import { imageSet, imageSpread } from "@/lib/images";
 import { cn } from "@/lib/utils";
 
 /** A single stylish image box: gradient ring, glow, hover-zoom, corner pulse. */
@@ -43,37 +43,38 @@ export function ImageTile({
  * A stylish, staggered band of images. Used standalone in sections and inside
  * shared components (PageHero banner, CTABand) so every page carries imagery.
  */
+/**
+ * A clean, connected 3-image grid (bento: one large + two stacked) with tight
+ * uniform gaps. Same structure on mobile and desktop. Images are spread across
+ * the gallery so the trio is varied, not near-duplicates.
+ */
 export function ImageShowcase({
   eyebrow,
   offset = 0,
-  count = 3,
   className,
-  ratio = "aspect-[4/3]",
 }: {
   eyebrow?: string;
   offset?: number;
-  count?: number;
   className?: string;
+  /** Accepted for backwards-compat; the bento grid always renders 3 images. */
+  count?: number;
   ratio?: string;
 }) {
-  const imgs = imageSet(offset, count);
+  const imgs = imageSpread(offset, 3);
   return (
-    <div className={cn("mx-auto w-full max-w-7xl px-5 sm:px-6", className)}>
+    <div className={cn("mx-auto w-full max-w-5xl px-5 sm:px-6", className)}>
       {eyebrow && (
         <Reveal>
           <p className="mb-6 text-center text-xs font-bold uppercase tracking-[0.3em] text-gradient">{eyebrow}</p>
         </Reveal>
       )}
-      <div className={cn("grid grid-cols-1 gap-4", count >= 3 ? "sm:grid-cols-3" : "sm:grid-cols-2")}>
-        {imgs.map((img, i) => (
-          <Reveal key={`${img.id}-${i}`} delay={i * 0.06}>
-            <ImageTile
-              src={img.src}
-              className={cn(ratio, count >= 3 && i % 3 === 1 && "sm:-translate-y-6", count >= 3 && i % 3 === 2 && "sm:translate-y-6")}
-            />
-          </Reveal>
-        ))}
-      </div>
+      <Reveal>
+        <div className="grid h-[64vw] max-h-[26rem] grid-cols-2 grid-rows-2 gap-2.5 sm:h-[24rem] sm:gap-3">
+          <ImageTile src={imgs[0].src} className="row-span-2 h-full" sizes="(max-width: 768px) 50vw, 420px" />
+          <ImageTile src={imgs[1].src} className="h-full" sizes="(max-width: 768px) 50vw, 420px" />
+          <ImageTile src={imgs[2].src} className="h-full" sizes="(max-width: 768px) 50vw, 420px" />
+        </div>
+      </Reveal>
     </div>
   );
 }
