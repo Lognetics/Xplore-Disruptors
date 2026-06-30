@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
-import { imageSet, imageSpread } from "@/lib/images";
+import { imageSet, imageSpread, type ImagePool } from "@/lib/images";
 import { cn } from "@/lib/utils";
 
 /** A single stylish image box: gradient ring, glow, hover-zoom, corner pulse. */
@@ -52,15 +52,17 @@ export function ImageShowcase({
   eyebrow,
   offset = 0,
   className,
+  source = "event",
 }: {
   eyebrow?: string;
   offset?: number;
   className?: string;
+  source?: ImagePool;
   /** Accepted for backwards-compat; the bento grid always renders 3 images. */
   count?: number;
   ratio?: string;
 }) {
-  const imgs = imageSpread(offset, 3);
+  const imgs = imageSpread(offset, 3, source);
   return (
     <div className={cn("mx-auto w-full max-w-5xl px-5 sm:px-6", className)}>
       {eyebrow && (
@@ -79,9 +81,9 @@ export function ImageShowcase({
   );
 }
 
-/** A single wide banner image (used by PageHero). */
-export function ImageBanner({ offset = 0, className }: { offset?: number; className?: string }) {
-  const img = imageSet(offset, 1)[0];
+/** A single wide banner image (used by PageHero). Defaults to the featured set. */
+export function ImageBanner({ offset = 0, className, source = "main" }: { offset?: number; className?: string; source?: ImagePool }) {
+  const img = imageSet(offset, 1, source)[0];
   return (
     <Reveal className={cn("mx-auto mt-10 w-full max-w-5xl", className)}>
       <ImageTile src={img.src} className="aspect-[16/7]" sizes="(max-width: 1024px) 100vw, 1024px" priority />

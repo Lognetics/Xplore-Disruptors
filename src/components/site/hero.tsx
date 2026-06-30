@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight, Play, Sparkles, MapPin, CalendarDays, ChevronDown } from "lucide-react";
-import { Globe } from "@/components/three/globe";
 import { Countdown } from "@/components/site/countdown";
 import { SITE } from "@/lib/site";
 
@@ -12,10 +11,21 @@ const ease = [0.16, 1, 0.3, 1] as const;
 export function Hero() {
   return (
     <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-5 pt-24 pb-16">
-      {/* 3D particle globe */}
-      <Globe className="pointer-events-none absolute inset-0 -z-10 mx-auto h-full w-full max-w-6xl opacity-90" />
-      {/* radial vignette + grid */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_38%,rgba(46,123,255,0.18),transparent_70%)]" />
+      {/* Hero background video — autoplays muted, loops, with poster for instant paint */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/media/hero/poster.jpg"
+        className="pointer-events-none absolute inset-0 -z-20 h-full w-full object-cover"
+      >
+        <source src="/media/hero/hero.mp4" type="video/mp4" />
+      </video>
+      {/* legibility wash + brand glow + bottom fade into the page */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(3,4,10,0.62),rgba(3,4,10,0.42)_45%,rgba(3,4,10,0.96))]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(70%_50%_at_50%_35%,rgba(46,123,255,0.16),transparent_70%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-64 bg-gradient-to-t from-background to-transparent" />
 
       <div className="relative mx-auto flex max-w-4xl flex-col items-center text-center">

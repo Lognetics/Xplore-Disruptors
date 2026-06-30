@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 /**
@@ -30,7 +31,7 @@ export function XMark({ className }: { className?: string }) {
   );
 }
 
-/** Full lockup: X mark + XPLORE wordmark (+ optional DISRUPTORS subline). */
+/** Full lockup: the official XPLORE wordmark (+ optional DISRUPTORS subline). */
 export function Logo({
   className,
   showSub = true,
@@ -42,22 +43,19 @@ export function Logo({
 }) {
   return (
     <span className={cn("inline-flex items-center gap-2.5 select-none", className)}>
-      <XMark className={compact ? "h-7 w-7" : "h-9 w-9"} />
-      <span className="flex flex-col leading-none">
-        <span
-          className={cn(
-            "font-display font-extrabold tracking-tight",
-            compact ? "text-lg" : "text-xl",
-          )}
-        >
-          XPLORE
+      <Image
+        src="/brand/xplore-logo.png"
+        alt="Xplore Disruptors"
+        width={760}
+        height={301}
+        priority
+        className={cn("w-auto", compact ? "h-6" : "h-8")}
+      />
+      {showSub && (
+        <span className="hidden text-[0.6rem] font-semibold uppercase tracking-[0.34em] text-muted sm:block">
+          Disruptors
         </span>
-        {showSub && (
-          <span className="text-[0.6rem] font-semibold uppercase tracking-[0.34em] text-muted">
-            Disruptors
-          </span>
-        )}
-      </span>
+      )}
     </span>
   );
 }

@@ -20,18 +20,18 @@ export default function LandingPage() {
       <Hero />
       <TrustMarquee />
       <StatsSection />
-      <ImageShowcase eyebrow="On the ground in Abuja" offset={1} count={3} className="py-12" />
+      <ImageShowcase eyebrow="On the ground in Abuja" source="main" offset={0} className="py-12" />
       <MapSection />
       <Mission />
-      <ImageShowcase eyebrow="The energy of the festival floor" offset={8} count={3} className="py-12" />
+      <ImageShowcase eyebrow="The energy of the festival floor" source="main" offset={3} className="py-12" />
       <Domains />
       <Ecosystem />
-      <ImageShowcase eyebrow="One continent, one community" offset={14} count={3} className="py-12" />
+      <ImageShowcase eyebrow="One continent, one community" source="main" offset={6} className="py-12" />
       <Experience />
       <Speakers />
       <Gallery />
       <Features />
-      <ImageShowcase eyebrow="Moments that moved the continent" offset={20} count={3} className="py-12" />
+      <ImageShowcase eyebrow="Moments that moved the continent" source="main" offset={9} className="py-12" />
       <Tickets />
       <Partners />
       <CTA />
