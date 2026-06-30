@@ -11,8 +11,9 @@ export type MenuGroup = { label: string; href?: string; items: Link[] };
 export const MEGA_MENU: MenuGroup[] = [
   {
     label: "Festival",
-    href: "/about",
+    href: "/",
     items: [
+      { label: "Home", href: "/", desc: "Back to the landing" },
       { label: "About Xplore", href: "/about", desc: "The movement & story" },
       { label: "Speakers", href: "/speakers", desc: "Voices shaping tomorrow" },
       { label: "Agenda", href: "/agenda", desc: "3 days, multiple stages" },
