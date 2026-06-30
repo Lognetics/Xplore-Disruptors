@@ -67,9 +67,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2">
-          <Link href="/contact" className="hidden rounded-full px-3 py-2 text-sm font-medium text-muted hover:text-foreground xl:inline-flex">
-            Contact
-          </Link>
           <Link
             href="/tickets"
             className="hidden h-10 items-center gap-1.5 rounded-xl bg-[linear-gradient(110deg,var(--neon-blue),var(--neon-violet))] px-4 text-sm font-semibold text-white transition-transform hover:scale-[1.03] sm:inline-flex"

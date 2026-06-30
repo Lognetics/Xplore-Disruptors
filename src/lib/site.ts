@@ -32,7 +32,7 @@ export const SITE = {
     year: 2026,
     dates: "November 2026",
     startISO: "2026-11-13T09:00:00+01:00",
-    venue: "Velodrome, National Stadium",
+    venue: "World Trade Center",
     city: "Abuja, Nigeria",
   },
   contact: {
