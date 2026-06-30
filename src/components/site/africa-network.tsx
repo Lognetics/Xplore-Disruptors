@@ -83,6 +83,20 @@ const idx = (name: string) => nodes.findIndex((n) => n.n === name);
   ["Nairobi", "Pretoria"], ["Kinshasa", "Nairobi"], ["Cairo", "Algiers"], ["Abuja", "Pretoria"],
 ] as [string, string][]).forEach(([a, b]) => addEdge(idx(a), idx(b)));
 
+// Glowing data pulses that travel along each route (alternating direction).
+const beams = edges.map(([a, b], i) => {
+  const A = nodes[a], B = nodes[b];
+  const len = Math.hypot(B.x - A.x, B.y - A.y);
+  const dur = Math.min(4.5, Math.max(1.8, len / 80));
+  const p1 = `${A.x.toFixed(1)} ${A.y.toFixed(1)}`;
+  const p2 = `${B.x.toFixed(1)} ${B.y.toFixed(1)}`;
+  return {
+    path: i % 2 === 0 ? `M ${p1} L ${p2}` : `M ${p2} L ${p1}`,
+    dur: `${dur.toFixed(2)}s`,
+    begin: `${((i % 11) * 0.3).toFixed(2)}s`,
+  };
+});
+
 export function AfricaNetwork() {
   return (
     <svg viewBox={`0 0 ${VB.w} ${VB.h}`} className="h-full w-full" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Map of Africa connecting 30 capital cities">
@@ -94,6 +108,14 @@ export function AfricaNetwork() {
         <filter id="afGlow" x="-30%" y="-30%" width="160%" height="160%">
           <feGaussianBlur stdDeviation="3" result="b" />
           <feMerge>
+            <feMergeNode in="b" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <filter id="afBeam" x="-400%" y="-400%" width="900%" height="900%">
+          <feGaussianBlur stdDeviation="2.4" result="b" />
+          <feMerge>
+            <feMergeNode in="b" />
             <feMergeNode in="b" />
             <feMergeNode in="SourceGraphic" />
           </feMerge>
@@ -115,6 +137,16 @@ export function AfricaNetwork() {
             strokeDasharray="3 9"
             style={{ animation: `mapdash 1.6s linear infinite`, animationDelay: `${(i % 7) * 0.18}s` }}
           />
+        ))}
+      </g>
+
+      {/* glowing pulses travelling along the routes */}
+      <g filter="url(#afBeam)">
+        {beams.map((bm, i) => (
+          <circle key={i} r={2.3} fill="#22d3ee">
+            <animateMotion dur={bm.dur} begin={bm.begin} repeatCount="indefinite" path={bm.path} />
+            <animate attributeName="opacity" dur={bm.dur} begin={bm.begin} repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.12;0.82;1" />
+          </circle>
         ))}
       </g>
 
