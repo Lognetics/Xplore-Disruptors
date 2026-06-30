@@ -22,7 +22,6 @@ export const MEGA_MENU: MenuGroup[] = [
       { label: "Exhibitors", href: "/exhibitors", desc: "Reserve your booth" },
       { label: "Awards", href: "/awards", desc: "Honouring the disruptors" },
       { label: "Gallery", href: "/gallery", desc: "Relive the moments" },
-      { label: "FAQ", href: "/faq", desc: "Answers to common questions" },
     ],
   },
   {
@@ -60,9 +59,6 @@ export const MEGA_MENU: MenuGroup[] = [
       { label: "Press Kit", href: "/press-kit", desc: "Media accreditation" },
       { label: "Brand Assets", href: "/brand-assets", desc: "Logos & guidelines" },
       { label: "Downloads", href: "/downloads", desc: "Brochures & decks" },
-      { label: "Privacy Policy", href: "/privacy", desc: "How we use your data" },
-      { label: "Terms of Service", href: "/terms", desc: "The rules of use" },
-      { label: "Cookie Policy", href: "/cookies", desc: "How we use cookies" },
     ],
   },
 ];
