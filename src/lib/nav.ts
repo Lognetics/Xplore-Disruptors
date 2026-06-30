@@ -72,6 +72,7 @@ export const FOOTER: MenuGroup[] = [
   {
     label: "Festival",
     items: [
+      { label: "Home", href: "/" },
       { label: "About", href: "/about" },
       { label: "Mission & Vision", href: "/about#mission" },
       { label: "Speakers", href: "/speakers" },
