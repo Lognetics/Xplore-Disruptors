@@ -44,10 +44,10 @@ export function Logo({
   return (
     <span className={cn("inline-flex items-center gap-2.5 select-none", className)}>
       <Image
-        src="/brand/xplore-logo.png"
+        src="/brand/xplore-logo-web.png"
         alt="Xplore Disruptors"
         width={760}
-        height={301}
+        height={292}
         priority
         className={cn("w-auto", compact ? "h-6" : "h-8")}
       />

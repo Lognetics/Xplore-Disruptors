@@ -1,10 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Download, Check, X } from "lucide-react";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
 import { CTABand } from "@/components/site/cta-band";
 import { Reveal } from "@/components/ui/reveal";
-import { XMark } from "@/components/brand/logo";
 
 export const metadata = {
   title: "Brand Assets",
@@ -36,17 +36,15 @@ export default function BrandAssetsPage() {
       <Section eyebrow="Logo" title="The mark & lockup">
         <div className="grid gap-4 sm:grid-cols-2">
           <Reveal>
-            <div className="flex aspect-[16/9] flex-col items-center justify-center gap-3 rounded-3xl border border-border bg-[#03040a]">
-              <XMark className="h-16 w-16" />
-              <span className="font-display text-xl font-extrabold tracking-tight">XPLORE</span>
+            <div className="flex aspect-[16/9] flex-col items-center justify-center gap-4 rounded-3xl border border-border bg-[#03040a] p-8">
+              <Image src="/brand/xplore-logo.png" alt="Xplore Disruptors logo" width={760} height={301} className="h-auto w-full max-w-[15rem] object-contain" />
               <span className="text-xs text-muted">On dark · primary</span>
             </div>
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="flex aspect-[16/9] flex-col items-center justify-center gap-3 rounded-3xl border border-border bg-white">
-              <XMark className="h-16 w-16" />
-              <span className="font-display text-xl font-extrabold tracking-tight text-[#03040a]">XPLORE</span>
-              <span className="text-xs text-[#5b6577]">On light · alternate</span>
+            <div className="flex aspect-[16/9] flex-col items-center justify-center gap-4 rounded-3xl border border-border bg-white p-8">
+              <Image src="/brand/xplore-logo.png" alt="Xplore Disruptors logo" width={760} height={301} className="h-auto w-full max-w-[15rem] object-contain" />
+              <span className="text-xs text-[#5b6577]">On light</span>
             </div>
           </Reveal>
         </div>
